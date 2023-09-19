@@ -1,6 +1,6 @@
 # Find a Brewery
 
-/images/beer-panorama.jpg
+![Image1](/images/beer-panorama.jpg)
 
 **Git URL:** https://eaw-pid.github.io/find-a-brewery/
 
