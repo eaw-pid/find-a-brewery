@@ -5,24 +5,27 @@ const dropDown = document.querySelector('#options')
 let searchBar
 
 function fetchData() {
+    brewList.innerHTML = ""
+    brewInfo.innerHTML = ""
     fetch("https://api.openbrewerydb.org/breweries")
 .then(res => res.json())
 .then(data => {
-    
-    renderList(data)
+    filterList(data)
     
 })
 }
 
-function renderList(data) { 
-    brewList.innerHTML = ""
-    brewInfo.innerHTML = ""
+function filterList(data) { 
+ 
     searchBar = searchForm.name.value
     const filteredBrew = data.filter(brew => brew.state.toLowerCase() === searchBar.toLowerCase())
     const filteredBrewByType = data.filter(brew => brew.brewery_type === dropDown.value)   
     
     filteredBrew.forEach(brew => renderBrew(brew))
     filteredBrewByType.forEach(brew => renderBrew(brew))
+    searchForm.name.value = ""
+    dropDown.value = ""
+
 
 }
 
@@ -56,12 +59,19 @@ function brewData(brew) {
 
 dropDown.addEventListener('change', (e) => 
     fetchData()
+    
 )
 
 searchForm.addEventListener('submit', (e) => {
     e.preventDefault();
     fetchData()
     
+})
+
+resetBtn = document.querySelector('#reset-btn')
+resetBtn.addEventListener('click', () => {
+    brewList.innerHTML = ""
+    brewInfo.innerHTML = ""
 })
 
 
@@ -85,3 +95,6 @@ searchForm.addEventListener('submit', (e) => {
     //     return
     // }  
  
+    //try using the event and filter only based on event
+
+    //Have to reset the search bar and the dropdown after each search
