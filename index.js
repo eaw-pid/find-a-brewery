@@ -8,14 +8,15 @@ function fetchData() {
     fetch("https://api.openbrewerydb.org/breweries")
 .then(res => res.json())
 .then(data => {
-    brewList.innerHTML = ""
-    brewInfo.innerHTML = ""
+    
     renderList(data)
     
 })
 }
 
 function renderList(data) { 
+    brewList.innerHTML = ""
+    brewInfo.innerHTML = ""
     searchBar = searchForm.name.value
     const filteredBrew = data.filter(brew => brew.state.toLowerCase() === searchBar.toLowerCase())
     const filteredBrewByType = data.filter(brew => brew.brewery_type === dropDown.value)   
@@ -43,10 +44,11 @@ function brewData(brew) {
     brewDiv.setAttribute('id', `${brew.id}`)
     brewDiv.innerHTML = `
         <p><strong>Address:</strong> ${brew.street}<br>
-        ${brew.city},${brew.state} ${brew.postal_code}</p>
+        ${brew.city}, ${brew.state} ${brew.postal_code}</p>
         <br>
         <p><strong>Phone: </strong>${brew.phone}</p>
         <br>
+        <p><strong>Brewery Type: </strong> ${brew.brewery_type}</p>
         <a href=${brew.website_url}>Website</a>
         `
         brewInfo.append(brewDiv)  
