@@ -3,6 +3,7 @@
 ![Image1](/images/beer-panorama.jpg)
 
 **Git URL:** https://eaw-pid.github.io/find-a-brewery/
+**API:** https://api.openbrewerydb.org/breweries
 
 ## Core Deliverables:
 
