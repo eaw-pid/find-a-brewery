@@ -42,10 +42,10 @@ function brewData(brew) {
     brewDiv.className = "brew-div"
     brewDiv.setAttribute('id', `${brew.id}`)
     brewDiv.innerHTML = `
-        <p>${brew.street}<br>
-        ${brew.city},${brew.state} ${brew.postal_code}</p
+        <p><strong>Address:</strong> ${brew.street}<br>
+        ${brew.city},${brew.state} ${brew.postal_code}</p>
         <br>
-        <p>${brew.phone}</p>
+        <p><strong>Phone: </strong>${brew.phone}</p>
         <br>
         <a href=${brew.website_url}>Website</a>
         `
