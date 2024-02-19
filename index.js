@@ -11,8 +11,8 @@ function fetchData() {
 .then(res => res.json())
 .then(data => {
     filterList(data)
-    
 })
+
 }
 
 function filterList(data) { 
@@ -90,10 +90,10 @@ resetBtn.addEventListener('click', () => {
  * is lsited on the other side
  */
 
- // if (filteredBrew.length === 0) {
-    //     alert("Try Another State!")
-    //     return
-    // }  
+//  if (filteredBrew.length === 0) {
+//         alert("Try Another State!")
+//         return
+//     }  
  
     //try using the event and filter only based on event
 

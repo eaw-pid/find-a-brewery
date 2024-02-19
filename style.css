@@ -3,6 +3,9 @@
     box-sizing: border-box;
   }
   
+  * {
+    font-family: OCR A Std, monospace;
+  }
   
   .cheers-image {
       display: block;
@@ -19,17 +22,23 @@
     
   }
   
-  
-  
-  #form {
-    display:flex;
-    justify-content: center;
+  body {
+    text-align: center
+  }
+
+  ul {
+    display: inline-block;
+    text-align: left;
   }
   
-  #dropdown {
-    justify-content: center;
+  #border-box {
+    border: 2px solid black;
+    padding: 10px;
+    margin: 0 auto;
+    max-width: 800px;
+
   }
-  
+
   
   .text-container {
     border: 5px solid;
@@ -39,9 +48,7 @@
     background-color: whitesmoke
   }
   
-  h1, h2, h3 {
-    font-family: OCR A Std, monospace;
-  }
+  
   
   h1 {
     font-size: 60px;
