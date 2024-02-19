@@ -45,11 +45,14 @@ function brewData(brew) {
     let brewDiv = document.createElement('div')
     brewDiv.className = "brew-div"
     brewDiv.setAttribute('id', `${brew.id}`)
+    const phone1 = brew.phone.slice(0,3)
+    const phone2 = brew.phone.slice(3,6)
+    const phone3 = brew.phone.slice(6,10)
     brewDiv.innerHTML = `
         <p><strong>Address:</strong> ${brew.street}<br>
         ${brew.city}, ${brew.state} ${brew.postal_code}</p>
         <br>
-        <p><strong>Phone: </strong>${brew.phone}</p>
+        <p><strong>Phone: </strong>(${phone1}) ${phone2} - ${phone3}</p>
         <br>
         <p><strong>Brewery Type: </strong> ${brew.brewery_type}</p>
         <a href=${brew.website_url}>Website</a>
